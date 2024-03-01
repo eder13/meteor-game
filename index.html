@@ -6,7 +6,7 @@
             http-equiv="Content-Type"
             content="text/html; charset=utf-8"
         />
-        <title>Unity WebGL Player | shmup</title>
+        <title>Meteor Defender | ranftl.dev</title>
         <link
             rel="shortcut icon"
             href="TemplateData/favicon.ico"
@@ -15,55 +15,79 @@
             rel="stylesheet"
             href="TemplateData/style.css"
         />
+        <style>
+            @media only screen and (max-height: 800px) {
+                #unity-container {
+                    margin-top: 6rem !important;
+                }
+            }
+        </style>
     </head>
     <body>
-        <h3
-            style="
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            "
-        >
-            Meteor Defender
-        </h3>
+        <div id="game-description">
+            <h1
+                style="
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: center;
+                    margin-bottom: 0;
+                    font-size: 1.5rem;
+                "
+            >
+                Meteor Defender
+            </h1>
 
-        <p
-            style="
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            "
-        >
-            A shmup that got some inspiration from the gameplay of
-            <a
-                rel="noopener noreferrer"
-                href="https://de.wikipedia.org/wiki/Asteroids"
-                target="_blank"
-                >Asteroids</a
-            >. Developed as the first assignment for GDD1 at TU Graz.
-            <mark>Note: Only works on Desktop with Mouse and Keyboard</mark>
-        </p>
+            <p
+                style="
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0.5rem;
+                "
+            >
+                A shmup that got some inspiration from the gameplay of
+                <a
+                    rel="noopener noreferrer"
+                    href="https://de.wikipedia.org/wiki/Asteroids"
+                    target="_blank"
+                    >Asteroids</a
+                >.
+                <br />
+                <mark
+                    >Note: Only works on Desktop with Mouse and Keyboard.</mark
+                >
+            </p>
 
-        <p
-            style="
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            "
-        >
-            "Pew" sound from freesound.org by
-            <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://freesound.org/people/MATRIXXX_/sounds/459145/"
-                >MATRIXXX_</a
-            >.
-        </p>
+            <div
+                style="
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: center;
+                "
+            >
+                <div>Sound Assets used:</div>
+
+                <ul style="list-style-type: none; margin: 0">
+                    <li>
+                        "Pew" sound from freesound.org by
+                        <a
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://freesound.org/people/MATRIXXX_/sounds/459145/"
+                            >MATRIXXX_</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <div
             id="unity-container"
             class="unity-desktop"
+            style="margin-top: 3rem"
         >
             <canvas
                 id="unity-canvas"
-                style="aspect-ratio: 16 / 9; width: 960px; height: auto"
+                width="960"
+                height="600"
             ></canvas>
             <div id="unity-loading-bar">
                 <div id="unity-logo"></div>
@@ -111,11 +135,11 @@
             }
 
             var buildUrl = 'Build';
-            var loaderUrl = buildUrl + '/MyGame.loader.js';
+            var loaderUrl = buildUrl + '/meteor-defender.loader.js';
             var config = {
-                dataUrl: buildUrl + '/MyGame.data',
-                frameworkUrl: buildUrl + '/MyGame.framework.js',
-                codeUrl: buildUrl + '/MyGame.wasm',
+                dataUrl: buildUrl + '/meteor-defender.data',
+                frameworkUrl: buildUrl + '/meteor-defender.framework.js',
+                codeUrl: buildUrl + '/meteor-defender.wasm',
                 streamingAssetsUrl: 'StreamingAssets',
                 companyName: 'DefaultCompany',
                 productName: 'shmup',
